@@ -8,7 +8,7 @@
 
 #import "CruiseListViewController.h"
 #import "CruiseListViewCell.h"
-//#import "CruiseDetailViewController.h"
+#import "CruiseDetailViewController.h"
 #import "CruiseListModel.h"
 
 #define Width_Window    [UIScreen mainScreen].bounds.size.width

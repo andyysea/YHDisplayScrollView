@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "CruiseListViewController.h"
+
 
 @interface ViewController ()
 
@@ -16,14 +18,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    self.view.backgroundColor = [UIColor orangeColor];
+    
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeContactAdd];
+    button.center = self.view.center;
+    [self.view addSubview:button];
+    
+    [button addTarget:self action:@selector(buttonClick) forControlEvents:UIControlEventTouchUpInside];
 }
 
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - 点击跳转
+- (void)buttonClick {
+    CruiseListViewController *listVC = [CruiseListViewController new];
+    
+    [self.navigationController pushViewController:listVC animated:YES];
 }
-
 
 @end

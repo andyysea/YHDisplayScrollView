@@ -15,6 +15,11 @@
 		7EFF8AD91E66769300F7217D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7EFF8AD81E66769300F7217D /* Assets.xcassets */; };
 		7EFF8ADC1E66769300F7217D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EFF8ADA1E66769300F7217D /* LaunchScreen.storyboard */; };
 		7EFF8AE71E66769300F7217D /* ViewEffectsAndLinkageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EFF8AE61E66769300F7217D /* ViewEffectsAndLinkageTests.m */; };
+		7EFF8AFE1E6677C300F7217D /* CruiseListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EFF8AF41E6677C300F7217D /* CruiseListModel.m */; };
+		7EFF8AFF1E6677C300F7217D /* CruiseListViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EFF8AF61E6677C300F7217D /* CruiseListViewCell.m */; };
+		7EFF8B001E6677C300F7217D /* CruiseListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EFF8AF81E6677C300F7217D /* CruiseListViewController.m */; };
+		7EFF8B011E6677C300F7217D /* listJsonData.json in Resources */ = {isa = PBXBuildFile; fileRef = 7EFF8AF91E6677C300F7217D /* listJsonData.json */; };
+		7EFF8B021E6677C300F7217D /* PlaceContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EFF8AFB1E6677C300F7217D /* PlaceContentView.m */; };
 		8065714A528AF0F680DB4978 /* libPods-ViewEffectsAndLinkageTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 546845DE5C4091D1F04B0245 /* libPods-ViewEffectsAndLinkageTests.a */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +50,15 @@
 		7EFF8AE21E66769300F7217D /* ViewEffectsAndLinkageTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ViewEffectsAndLinkageTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EFF8AE61E66769300F7217D /* ViewEffectsAndLinkageTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewEffectsAndLinkageTests.m; sourceTree = "<group>"; };
 		7EFF8AE81E66769300F7217D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7EFF8AF31E6677C300F7217D /* CruiseListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CruiseListModel.h; sourceTree = "<group>"; };
+		7EFF8AF41E6677C300F7217D /* CruiseListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CruiseListModel.m; sourceTree = "<group>"; };
+		7EFF8AF51E6677C300F7217D /* CruiseListViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CruiseListViewCell.h; sourceTree = "<group>"; };
+		7EFF8AF61E6677C300F7217D /* CruiseListViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CruiseListViewCell.m; sourceTree = "<group>"; };
+		7EFF8AF71E6677C300F7217D /* CruiseListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CruiseListViewController.h; sourceTree = "<group>"; };
+		7EFF8AF81E6677C300F7217D /* CruiseListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CruiseListViewController.m; sourceTree = "<group>"; };
+		7EFF8AF91E6677C300F7217D /* listJsonData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = listJsonData.json; sourceTree = "<group>"; };
+		7EFF8AFA1E6677C300F7217D /* PlaceContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceContentView.h; sourceTree = "<group>"; };
+		7EFF8AFB1E6677C300F7217D /* PlaceContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceContentView.m; sourceTree = "<group>"; };
 		8DABA52363B8DF3FF6F7378E /* Pods-ViewEffectsAndLinkage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViewEffectsAndLinkage.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ViewEffectsAndLinkage/Pods-ViewEffectsAndLinkage.debug.xcconfig"; sourceTree = "<group>"; };
 		8F08B4725B6684AAD6C850C9 /* libPods-ViewEffectsAndLinkage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ViewEffectsAndLinkage.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F0D69909380710466275ECB /* Pods-ViewEffectsAndLinkageTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViewEffectsAndLinkageTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ViewEffectsAndLinkageTests/Pods-ViewEffectsAndLinkageTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -106,6 +120,7 @@
 				7EFF8AD01E66769300F7217D /* AppDelegate.m */,
 				7EFF8AD21E66769300F7217D /* ViewController.h */,
 				7EFF8AD31E66769300F7217D /* ViewController.m */,
+				7EFF8AF11E6677C300F7217D /* 豪华邮轮 */,
 				7EFF8AD51E66769300F7217D /* Main.storyboard */,
 				7EFF8AD81E66769300F7217D /* Assets.xcassets */,
 				7EFF8ADA1E66769300F7217D /* LaunchScreen.storyboard */,
@@ -130,6 +145,46 @@
 				7EFF8AE81E66769300F7217D /* Info.plist */,
 			);
 			path = ViewEffectsAndLinkageTests;
+			sourceTree = "<group>";
+		};
+		7EFF8AF11E6677C300F7217D /* 豪华邮轮 */ = {
+			isa = PBXGroup;
+			children = (
+				7EFF8AF21E6677C300F7217D /* 邮轮列表 */,
+				7EFF8AFC1E6677C300F7217D /* 邮轮详情 */,
+				7EFF8AFD1E6677C300F7217D /* 邮轮预约 */,
+			);
+			path = "豪华邮轮";
+			sourceTree = "<group>";
+		};
+		7EFF8AF21E6677C300F7217D /* 邮轮列表 */ = {
+			isa = PBXGroup;
+			children = (
+				7EFF8AF71E6677C300F7217D /* CruiseListViewController.h */,
+				7EFF8AF81E6677C300F7217D /* CruiseListViewController.m */,
+				7EFF8AF31E6677C300F7217D /* CruiseListModel.h */,
+				7EFF8AF41E6677C300F7217D /* CruiseListModel.m */,
+				7EFF8AF51E6677C300F7217D /* CruiseListViewCell.h */,
+				7EFF8AF61E6677C300F7217D /* CruiseListViewCell.m */,
+				7EFF8AFA1E6677C300F7217D /* PlaceContentView.h */,
+				7EFF8AFB1E6677C300F7217D /* PlaceContentView.m */,
+				7EFF8AF91E6677C300F7217D /* listJsonData.json */,
+			);
+			path = "邮轮列表";
+			sourceTree = "<group>";
+		};
+		7EFF8AFC1E6677C300F7217D /* 邮轮详情 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "邮轮详情";
+			sourceTree = "<group>";
+		};
+		7EFF8AFD1E6677C300F7217D /* 邮轮预约 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "邮轮预约";
 			sourceTree = "<group>";
 		};
 		C1AA0C21D6BAD12365476994 /* Pods */ = {
@@ -231,6 +286,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EFF8B011E6677C300F7217D /* listJsonData.json in Resources */,
 				7EFF8ADC1E66769300F7217D /* LaunchScreen.storyboard in Resources */,
 				7EFF8AD91E66769300F7217D /* Assets.xcassets in Resources */,
 				7EFF8AD71E66769300F7217D /* Main.storyboard in Resources */,
@@ -344,9 +400,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EFF8AFE1E6677C300F7217D /* CruiseListModel.m in Sources */,
 				7EFF8AD41E66769300F7217D /* ViewController.m in Sources */,
 				7EFF8AD11E66769300F7217D /* AppDelegate.m in Sources */,
+				7EFF8B001E6677C300F7217D /* CruiseListViewController.m in Sources */,
+				7EFF8B021E6677C300F7217D /* PlaceContentView.m in Sources */,
 				7EFF8ACE1E66769300F7217D /* main.m in Sources */,
+				7EFF8AFF1E6677C300F7217D /* CruiseListViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -547,6 +607,7 @@
 				7EFF8AED1E66769300F7217D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7EFF8AEE1E66769300F7217D /* Build configuration list for PBXNativeTarget "ViewEffectsAndLinkageTests" */ = {
 			isa = XCConfigurationList;
@@ -555,6 +616,7 @@
 				7EFF8AF01E66769300F7217D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

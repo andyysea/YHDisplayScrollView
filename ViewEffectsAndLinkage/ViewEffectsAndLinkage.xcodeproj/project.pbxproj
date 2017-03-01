@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D8C0E64B3678B5DF85F45ED /* libPods-ViewEffectsAndLinkage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F08B4725B6684AAD6C850C9 /* libPods-ViewEffectsAndLinkage.a */; };
 		7EFF8ACE1E66769300F7217D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EFF8ACD1E66769300F7217D /* main.m */; };
 		7EFF8AD11E66769300F7217D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EFF8AD01E66769300F7217D /* AppDelegate.m */; };
 		7EFF8AD41E66769300F7217D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EFF8AD31E66769300F7217D /* ViewController.m */; };
@@ -14,6 +15,7 @@
 		7EFF8AD91E66769300F7217D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7EFF8AD81E66769300F7217D /* Assets.xcassets */; };
 		7EFF8ADC1E66769300F7217D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EFF8ADA1E66769300F7217D /* LaunchScreen.storyboard */; };
 		7EFF8AE71E66769300F7217D /* ViewEffectsAndLinkageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EFF8AE61E66769300F7217D /* ViewEffectsAndLinkageTests.m */; };
+		8065714A528AF0F680DB4978 /* libPods-ViewEffectsAndLinkageTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 546845DE5C4091D1F04B0245 /* libPods-ViewEffectsAndLinkageTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +29,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		310EB463A4C3BE0A6BD66A21 /* Pods-ViewEffectsAndLinkageTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViewEffectsAndLinkageTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ViewEffectsAndLinkageTests/Pods-ViewEffectsAndLinkageTests.release.xcconfig"; sourceTree = "<group>"; };
+		546845DE5C4091D1F04B0245 /* libPods-ViewEffectsAndLinkageTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ViewEffectsAndLinkageTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B41036F9E52BBB13ECA9101 /* Pods-ViewEffectsAndLinkage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViewEffectsAndLinkage.release.xcconfig"; path = "Pods/Target Support Files/Pods-ViewEffectsAndLinkage/Pods-ViewEffectsAndLinkage.release.xcconfig"; sourceTree = "<group>"; };
 		7EFF8AC91E66769300F7217D /* ViewEffectsAndLinkage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ViewEffectsAndLinkage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EFF8ACD1E66769300F7217D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7EFF8ACF1E66769300F7217D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -40,6 +45,9 @@
 		7EFF8AE21E66769300F7217D /* ViewEffectsAndLinkageTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ViewEffectsAndLinkageTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EFF8AE61E66769300F7217D /* ViewEffectsAndLinkageTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewEffectsAndLinkageTests.m; sourceTree = "<group>"; };
 		7EFF8AE81E66769300F7217D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8DABA52363B8DF3FF6F7378E /* Pods-ViewEffectsAndLinkage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViewEffectsAndLinkage.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ViewEffectsAndLinkage/Pods-ViewEffectsAndLinkage.debug.xcconfig"; sourceTree = "<group>"; };
+		8F08B4725B6684AAD6C850C9 /* libPods-ViewEffectsAndLinkage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ViewEffectsAndLinkage.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F0D69909380710466275ECB /* Pods-ViewEffectsAndLinkageTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViewEffectsAndLinkageTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ViewEffectsAndLinkageTests/Pods-ViewEffectsAndLinkageTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D8C0E64B3678B5DF85F45ED /* libPods-ViewEffectsAndLinkage.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,18 +63,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8065714A528AF0F680DB4978 /* libPods-ViewEffectsAndLinkageTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		01B66DD9BFA0254CB4CE00C2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8F08B4725B6684AAD6C850C9 /* libPods-ViewEffectsAndLinkage.a */,
+				546845DE5C4091D1F04B0245 /* libPods-ViewEffectsAndLinkageTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7EFF8AC01E66769300F7217D = {
 			isa = PBXGroup;
 			children = (
 				7EFF8ACB1E66769300F7217D /* ViewEffectsAndLinkage */,
 				7EFF8AE51E66769300F7217D /* ViewEffectsAndLinkageTests */,
 				7EFF8ACA1E66769300F7217D /* Products */,
+				C1AA0C21D6BAD12365476994 /* Pods */,
+				01B66DD9BFA0254CB4CE00C2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -111,6 +132,17 @@
 			path = ViewEffectsAndLinkageTests;
 			sourceTree = "<group>";
 		};
+		C1AA0C21D6BAD12365476994 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8DABA52363B8DF3FF6F7378E /* Pods-ViewEffectsAndLinkage.debug.xcconfig */,
+				7B41036F9E52BBB13ECA9101 /* Pods-ViewEffectsAndLinkage.release.xcconfig */,
+				9F0D69909380710466275ECB /* Pods-ViewEffectsAndLinkageTests.debug.xcconfig */,
+				310EB463A4C3BE0A6BD66A21 /* Pods-ViewEffectsAndLinkageTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -118,9 +150,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7EFF8AEB1E66769300F7217D /* Build configuration list for PBXNativeTarget "ViewEffectsAndLinkage" */;
 			buildPhases = (
+				F425237A76CF2918BDEEB462 /* [CP] Check Pods Manifest.lock */,
 				7EFF8AC51E66769300F7217D /* Sources */,
 				7EFF8AC61E66769300F7217D /* Frameworks */,
 				7EFF8AC71E66769300F7217D /* Resources */,
+				36D4D4F3658364BE795AA434 /* [CP] Embed Pods Frameworks */,
+				7D5D392CB66E8B42923CDF2A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -135,9 +170,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7EFF8AEE1E66769300F7217D /* Build configuration list for PBXNativeTarget "ViewEffectsAndLinkageTests" */;
 			buildPhases = (
+				C96C20F6CD6B5469A6EE9D15 /* [CP] Check Pods Manifest.lock */,
 				7EFF8ADE1E66769300F7217D /* Sources */,
 				7EFF8ADF1E66769300F7217D /* Frameworks */,
 				7EFF8AE01E66769300F7217D /* Resources */,
+				C88050829B9A1F55DEBD975D /* [CP] Embed Pods Frameworks */,
+				E65AC8C5A666AE93BFCB69D2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -207,6 +245,99 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		36D4D4F3658364BE795AA434 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ViewEffectsAndLinkage/Pods-ViewEffectsAndLinkage-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7D5D392CB66E8B42923CDF2A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ViewEffectsAndLinkage/Pods-ViewEffectsAndLinkage-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C88050829B9A1F55DEBD975D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ViewEffectsAndLinkageTests/Pods-ViewEffectsAndLinkageTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C96C20F6CD6B5469A6EE9D15 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E65AC8C5A666AE93BFCB69D2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ViewEffectsAndLinkageTests/Pods-ViewEffectsAndLinkageTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F425237A76CF2918BDEEB462 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7EFF8AC51E66769300F7217D /* Sources */ = {
@@ -347,6 +478,7 @@
 		};
 		7EFF8AEC1E66769300F7217D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8DABA52363B8DF3FF6F7378E /* Pods-ViewEffectsAndLinkage.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ViewEffectsAndLinkage/Info.plist;
@@ -359,6 +491,7 @@
 		};
 		7EFF8AED1E66769300F7217D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B41036F9E52BBB13ECA9101 /* Pods-ViewEffectsAndLinkage.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ViewEffectsAndLinkage/Info.plist;
@@ -371,6 +504,7 @@
 		};
 		7EFF8AEF1E66769300F7217D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9F0D69909380710466275ECB /* Pods-ViewEffectsAndLinkageTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = ViewEffectsAndLinkageTests/Info.plist;
@@ -383,6 +517,7 @@
 		};
 		7EFF8AF01E66769300F7217D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 310EB463A4C3BE0A6BD66A21 /* Pods-ViewEffectsAndLinkageTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = ViewEffectsAndLinkageTests/Info.plist;

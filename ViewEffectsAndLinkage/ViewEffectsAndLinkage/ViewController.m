@@ -21,11 +21,16 @@
     
     self.view.backgroundColor = [UIColor orangeColor];
     
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeContactAdd];
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button setTitle:@"点击进入" forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    [button sizeToFit];
+    button.backgroundColor = [UIColor lightGrayColor];
     button.center = self.view.center;
     [self.view addSubview:button];
     
     [button addTarget:self action:@selector(buttonClick) forControlEvents:UIControlEventTouchUpInside];
+    
 }
 
 

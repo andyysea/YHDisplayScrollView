@@ -9,7 +9,7 @@
 #import "CruiseDetailViewController.h"
 #import "TopViewController.h"
 #import "DownViewController.h"
-//#import "CruiseCommitViewController.h"
+#import "CruiseCommitViewController.h"
 #import "UIView+Common.h"
 
 #define Width_Window    [UIScreen mainScreen].bounds.size.width
@@ -48,9 +48,9 @@
 #pragma mark - 立即预约按钮点击方法
 - (void)bookButtonClick {
 //    NSLog(@"---> 点击了立即预约");
-//    CruiseCommitViewController *commitVC = [CruiseCommitViewController new];
-//    commitVC.shipId = self.shipId;
-//    [self.navigationController pushViewController:commitVC animated:YES];
+    CruiseCommitViewController *commitVC = [CruiseCommitViewController new];
+    commitVC.shipId = self.shipId;
+    [self.navigationController pushViewController:commitVC animated:YES];
 }
 
 

@@ -42,42 +42,31 @@
 
 #pragma mark - 加载底部控制器的数据,也是本控制器的数据
 - (void)loadDownVCData {
-//    [[RequestManger Instance] loadCuriseDetailDownVCDataWithShipId:self.shipId success:^(id requestEncode) {
-//        
-//        NSDictionary *dict = requestEncode;
-//        
-//        if ([dict[@"code"] isEqualToString:@"0000"]) {
-//            
-//            NSArray *contentArray = dict[@"data"][@"voyageInfo"];
-//            
-//            if (contentArray.count) {
-//               
-//                NSMutableArray *outArrayM = [NSMutableArray array];
-//                for (NSArray *outArray in contentArray) {
-//                    if (outArray.count) {
-//                        NSMutableArray *arrayM = [NSMutableArray array];
-//                        for (NSDictionary *dict in outArray) {
-//                            DownViewModel *model = [DownViewModel downViewModelWithDict:dict];
-//                            [arrayM addObject:model];
-//                        }
-//                        [outArrayM addObject:arrayM];
-//                    }
-//                }
-//                self.modelArray = outArrayM.copy;
-//            }
-//        
-//            // 拿到数据之后再创建界面元素
-//            [self setupUI];
-//            
-//        }else if([dict[@"code"] isEqualToString:@"9999"]){
-//            AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-//            [delegate logOutUserInfo];
-//        }else{
-//            [ProgressHUD showError:[NSString stringWithFormat:@"%@",dict[@"msg"]]];
-//        }
-//    } error:^(NSError *error) {
-//        [ProgressHUD showError:@"加载失败,请确认网络通畅"];
-//    }];
+    
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"downVCJsonData.json" ofType:nil];
+    NSData *jsonData = [NSData dataWithContentsOfFile:path];
+    
+    NSArray *dataArray = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:nil];
+    
+    
+    if (dataArray.count) {
+        
+        NSMutableArray *outArrayM = [NSMutableArray array];
+        for (NSArray *outArray in dataArray) {
+            if (outArray.count) {
+                NSMutableArray *arrayM = [NSMutableArray array];
+                for (NSDictionary *dict in outArray) {
+                    DownViewModel *model = [DownViewModel downViewModelWithDict:dict];
+                    [arrayM addObject:model];
+                }
+                [outArrayM addObject:arrayM];
+            }
+        }
+        self.modelArray = outArrayM.copy;
+    }
+    
+    // 拿到数据之后再创建界面元素
+    [self setupUI];
 }
 
 

@@ -93,30 +93,17 @@
 #pragma mark - 加载顶部视图的数据,也就是本控制器的数据
 - (void)loadTopVCData {
     
-//    [[RequestManger Instance] loadCuriseDetailTopVCDataWithShipId:self.shipId success:^(id requestEncode) {
-//
-//        NSDictionary *dict = requestEncode;
-//        
-//        if ([dict[@"code"] isEqualToString:@"0000"]) {
-//            
-//            NSDictionary *contentDict = dict[@"data"][@"luxuryShip"];
-//            TopViewModel *model = [TopViewModel topViewModelWithDict:contentDict];
-//            self.topModel = model;
-//            
-//            // 数据请求回调之后给元素设值
-//            [self setElementValueOfInterface];
-//            
-//        }else if([dict[@"code"] isEqualToString:@"9999"]){
-//            AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-//            [delegate logOutUserInfo];
-//        }else{
-//            [ProgressHUD showError:[NSString stringWithFormat:@"%@",dict[@"msg"]]];
-//        }
-//
-//        
-//    } error:^(NSError *error) {
-//        [ProgressHUD showError:@"加载失败,请确认网络通畅"];
-//    }];
+    NSURL *url = [[NSBundle mainBundle] URLForResource:@"topVCJsonData.json" withExtension:nil];
+    NSData *jsonData = [NSData dataWithContentsOfURL:url];
+   
+    NSDictionary *dataDict = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:nil];
+    
+    
+    TopViewModel *model = [TopViewModel topViewModelWithDict:dataDict];
+    self.topModel = model;
+    
+    // 数据请求回调之后给元素设值
+    [self setElementValueOfInterface];
     
 }
 

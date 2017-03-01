@@ -52,14 +52,17 @@ static NSString *cellId = @"cellId";
     
 }
 
+/**
+ NSJSONReadingMutableContainers  解析器顶级节点可以是可变字典或者数组
+ NSJSONReadingMutableLeaves      解析出来的是可变字符串
+ NSJSONReadingAllowFragments     允许解析器顶级节点可以不是字典或者数组
+ */
 
 #pragma mark - 加载数据
 - (void)loadData {
     
-    NSString *dataStr =  @"[{routeName = 新马泰三日游;id = 17022715445476132823;routeDestination = 新加坡,马尔代夫,泰国;routeDuration = 2晚3天;shipName = 公主游轮·安德莉亚女王号;listPhoto = http://123.126.102.219:20081/resources/upload/service/golf/17022715445476132823/17022815341212535597.jpg;lowerTicketPrice = 888;},{routeName = 游行名称02;id = 17022715551478646357;routeDestination = 天津港,上海港1,上海港2;routeDuration = 1个月;shipName = 游轮名称01;listPhoto = http://123.126.102.219:20081/resources/upload/service/golf/17022715551478646357/17030110242859978230.jpg;lowerTicketPrice = 1888.88;}]";
-    
-    
-    NSData *jsonData = [dataStr dataUsingEncoding:NSUTF8StringEncoding];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"listJsonData.json" ofType:nil];
+    NSData *jsonData = [NSData dataWithContentsOfFile:path];
     
     NSArray *dataArray = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:nil];
     for (NSDictionary *contentDict in dataArray) {
@@ -85,11 +88,11 @@ static NSString *cellId = @"cellId";
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     // 跳转到详情
-//    CruiseDetailViewController *detailVC = [CruiseDetailViewController new];
-//    CruiseListModel *model = self.modelArray[indexPath.section];
-//    detailVC.shipId = model.id;
-//    detailVC.routeName = model.routeName; 
-//    [self.navigationController pushViewController:detailVC animated:YES];
+    CruiseDetailViewController *detailVC = [CruiseDetailViewController new];
+    CruiseListModel *model = self.modelArray[indexPath.section];
+    detailVC.shipId = model.id;
+    detailVC.routeName = model.routeName; 
+    [self.navigationController pushViewController:detailVC animated:YES];
 }
 
 

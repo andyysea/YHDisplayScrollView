@@ -11,6 +11,7 @@
 #import <UIImageView+WebCache.h>
 #import "ContentCenterView.h" // 地点群视图
 #import "UIView+Common.h"
+#import <Masonry.h>
 
 #define Width_Window    [UIScreen mainScreen].bounds.size.width
 #define Height_Window   [UIScreen mainScreen].bounds.size.height
@@ -275,7 +276,7 @@
     lineView.backgroundColor = [UIColor colorWithRed:220/255.0 green:220/255.0 blue:220/255.0 alpha:1.0];
     [self.view addSubview:lineView];
     UILabel *tipLabel = [[UILabel alloc] initWithFrame:CGRectMake((Width_Window - 120) / 2, Height_Window - 80, 120, 20)];
-    tipLabel.backgroundColor = [UIColor customBackgroundColor1];
+    tipLabel.backgroundColor =  [UIColor colorWithRed:0.950 green:0.950 blue:0.970 alpha:1.000];
     tipLabel.textAlignment = NSTextAlignmentCenter;
     tipLabel.textColor = [UIColor lightGrayColor];
     tipLabel.font = [UIFont systemFontOfSize:11];

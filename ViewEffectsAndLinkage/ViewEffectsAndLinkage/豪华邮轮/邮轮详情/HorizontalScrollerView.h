@@ -32,7 +32,7 @@
  初始化视图
  
  @param frame 视图大小
- @param dataArray
+ @param dataArray 数组
  @return 返回根据数据创建好的水平滚动视图
  */
 - (instancetype)initWithFrame:(CGRect)frame withData:(NSArray *)dataArray;

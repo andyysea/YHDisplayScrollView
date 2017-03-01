@@ -10,6 +10,7 @@
 #import "HorizontalScrollerView.h"
 #import "BottomContentView.h"
 #import "DownViewModel.h"
+#import "UIView+Common.h"
 
 #define Width_Window    [UIScreen mainScreen].bounds.size.width
 #define Height_Window   [UIScreen mainScreen].bounds.size.height
@@ -94,7 +95,7 @@
 
 #pragma mark - 设置界面元素
 - (void)setupUI {
-    self.view.backgroundColor = [UIColor customBackgroundColor1];
+    self.view.backgroundColor =  [UIColor colorWithRed:0.950 green:0.950 blue:0.970 alpha:1.000];
     self.automaticallyAdjustsScrollViewInsets = NO;
     
     CGFloat bgHeight = 90;
@@ -119,7 +120,7 @@
     
     // 自定义底部视图
     BottomContentView *bottomView = [[BottomContentView alloc] initWithFrame:CGRectMake(0, horView.bottom + 25, Width_Window, bgHeight + bgHeight / 3 * 4  + 30)];
-    bottomView.backgroundColor = [UIColor customBackgroundColor1];
+    bottomView.backgroundColor = [UIColor colorWithRed:0.950 green:0.950 blue:0.970 alpha:1.000];
     [self.view addSubview:bottomView];
 
     // 传递初始数据

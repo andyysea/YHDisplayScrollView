@@ -18,3 +18,101 @@ listPhoto = http://123.126.102.219:20081/resources/upload/service/golf/170227155
 lowerTicketPrice = 1888.88;
 }
 ]
+
+
+
+##topVC
+
+{
+id = 17022715445476132823;
+gatewayPort = 新加坡-马尔代夫-泰国;
+routeDestination = 新加坡,马尔代夫,泰国;
+routeDuration = 2晚3天;
+starLevel = 5.2;
+buildYear = 2013;
+shipName = 公主游轮·安德莉亚女王号;
+infoPhoto = http://123.126.102.219:20081/resources/upload/service/golf/17022715445476132823/17022815343549780752.jpg;
+lowerTicketPrice = 888;
+routeName = 新马泰三日游;
+tonnage = 20000;
+passgerCapacity = 1000;
+}
+
+
+#downVC
+voyageInfo = [
+[
+{
+routeDuration = 2晚3天;
+shipCount = 2;
+innerRoom = 售净;
+lowerTicketPrice = 888;
+shipId = 17022715445476132823;
+balconyRoom = ¥2888/人起;
+endTime = 2017-03-04;
+shipTime = 2017-03;
+seaviewRoom = ¥1888/人起;
+suiteRoom = ¥8888/人起;
+endPiont = 泰国;
+startPoint = 新加坡;
+startTime = 2017-03-01;
+}
+,
+{
+routeDuration = 2晚3天;
+shipCount = 2;
+innerRoom = 售净;
+lowerTicketPrice = 888;
+shipId = 17022715445476132823;
+balconyRoom = 售净;
+endTime = 2017-03-13;
+shipTime = 2017-03;
+seaviewRoom = 售净;
+suiteRoom = ¥8888/人起;
+endPiont = 泰国;
+startPoint = 新加坡;
+startTime = 2017-03-10;
+}
+],
+
+[
+{
+routeDuration = 2晚3天;
+shipCount = 1;
+innerRoom = ¥888/人起;
+lowerTicketPrice = 888;
+shipId = 17022715445476132823;
+balconyRoom = ¥2888/人起;
+endTime = 2017-04-15;
+shipTime = 2017-04;
+seaviewRoom = ¥1888/人起;
+suiteRoom = ¥8888/人起;
+endPiont = 泰国;
+startPoint = 新加坡;
+startTime = 2017-04-01;
+}
+],
+
+[
+{
+routeDuration = 2晚3天;
+shipCount = 1;
+innerRoom = 售净;
+lowerTicketPrice = 888;
+shipId = 17022715445476132823;
+balconyRoom = ¥2888/人起;
+endTime = 2017-05-20;
+shipTime = 2017-05;
+seaviewRoom = 售净;
+suiteRoom = ¥8888/人起;
+endPiont = 泰国;
+startPoint = 新加坡;
+startTime = 2017-05-05;
+}
+]
+];
+
+
+
+
+

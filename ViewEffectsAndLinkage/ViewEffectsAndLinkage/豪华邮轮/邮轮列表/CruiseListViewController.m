@@ -91,7 +91,8 @@ static NSString *cellId = @"cellId";
     CruiseDetailViewController *detailVC = [CruiseDetailViewController new];
     CruiseListModel *model = self.modelArray[indexPath.section];
     detailVC.shipId = model.id;
-    detailVC.routeName = model.routeName; 
+    detailVC.routeName = model.routeName;
+    detailVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:detailVC animated:YES];
 }
 

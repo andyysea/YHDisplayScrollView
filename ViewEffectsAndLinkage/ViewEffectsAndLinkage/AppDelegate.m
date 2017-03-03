@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "YHMainController.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +17,13 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    _window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    
+    YHMainController *mainVC = [[YHMainController alloc] init];
+    _window.rootViewController = mainVC;
+    _window.backgroundColor = [UIColor whiteColor];
+    
+    [_window makeKeyAndVisible];
     return YES;
 }
 

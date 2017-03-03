@@ -8,10 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		4D8C0E64B3678B5DF85F45ED /* libPods-ViewEffectsAndLinkage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F08B4725B6684AAD6C850C9 /* libPods-ViewEffectsAndLinkage.a */; };
+		7EF93EB01E695CBD00B26BE8 /* YHMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF93EAF1E695CBD00B26BE8 /* YHMainController.m */; };
 		7EFF8ACE1E66769300F7217D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EFF8ACD1E66769300F7217D /* main.m */; };
 		7EFF8AD11E66769300F7217D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EFF8AD01E66769300F7217D /* AppDelegate.m */; };
-		7EFF8AD41E66769300F7217D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EFF8AD31E66769300F7217D /* ViewController.m */; };
-		7EFF8AD71E66769300F7217D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EFF8AD51E66769300F7217D /* Main.storyboard */; };
 		7EFF8AD91E66769300F7217D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7EFF8AD81E66769300F7217D /* Assets.xcassets */; };
 		7EFF8ADC1E66769300F7217D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EFF8ADA1E66769300F7217D /* LaunchScreen.storyboard */; };
 		7EFF8AE71E66769300F7217D /* ViewEffectsAndLinkageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EFF8AE61E66769300F7217D /* ViewEffectsAndLinkageTests.m */; };
@@ -52,13 +51,12 @@
 		310EB463A4C3BE0A6BD66A21 /* Pods-ViewEffectsAndLinkageTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViewEffectsAndLinkageTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ViewEffectsAndLinkageTests/Pods-ViewEffectsAndLinkageTests.release.xcconfig"; sourceTree = "<group>"; };
 		546845DE5C4091D1F04B0245 /* libPods-ViewEffectsAndLinkageTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ViewEffectsAndLinkageTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B41036F9E52BBB13ECA9101 /* Pods-ViewEffectsAndLinkage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViewEffectsAndLinkage.release.xcconfig"; path = "Pods/Target Support Files/Pods-ViewEffectsAndLinkage/Pods-ViewEffectsAndLinkage.release.xcconfig"; sourceTree = "<group>"; };
+		7EF93EAE1E695CBD00B26BE8 /* YHMainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHMainController.h; sourceTree = "<group>"; };
+		7EF93EAF1E695CBD00B26BE8 /* YHMainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHMainController.m; sourceTree = "<group>"; };
 		7EFF8AC91E66769300F7217D /* ViewEffectsAndLinkage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ViewEffectsAndLinkage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EFF8ACD1E66769300F7217D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7EFF8ACF1E66769300F7217D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7EFF8AD01E66769300F7217D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		7EFF8AD21E66769300F7217D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		7EFF8AD31E66769300F7217D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		7EFF8AD61E66769300F7217D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7EFF8AD81E66769300F7217D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7EFF8ADB1E66769300F7217D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7EFF8ADD1E66769300F7217D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -161,8 +159,8 @@
 			children = (
 				7EFF8ACF1E66769300F7217D /* AppDelegate.h */,
 				7EFF8AD01E66769300F7217D /* AppDelegate.m */,
-				7EFF8AD21E66769300F7217D /* ViewController.h */,
-				7EFF8AD31E66769300F7217D /* ViewController.m */,
+				7EF93EAE1E695CBD00B26BE8 /* YHMainController.h */,
+				7EF93EAF1E695CBD00B26BE8 /* YHMainController.m */,
 				7EFF8AF11E6677C300F7217D /* 豪华邮轮 */,
 				7EFF8ACC1E66769300F7217D /* Supporting Files */,
 			);
@@ -172,7 +170,6 @@
 		7EFF8ACC1E66769300F7217D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				7EFF8AD51E66769300F7217D /* Main.storyboard */,
 				7EFF8AD81E66769300F7217D /* Assets.xcassets */,
 				7EFF8ADA1E66769300F7217D /* LaunchScreen.storyboard */,
 				7EFF8ADD1E66769300F7217D /* Info.plist */,
@@ -378,7 +375,6 @@
 				7EFF8ADC1E66769300F7217D /* LaunchScreen.storyboard in Resources */,
 				7EFF8AD91E66769300F7217D /* Assets.xcassets in Resources */,
 				7EFF8B321E66A71700F7217D /* downVCJsonData.json in Resources */,
-				7EFF8AD71E66769300F7217D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -493,7 +489,7 @@
 				7EFF8AFE1E6677C300F7217D /* CruiseListModel.m in Sources */,
 				7EFF8B2E1E6694F800F7217D /* CruiseCommitViewController.m in Sources */,
 				7EFF8B1D1E668ED400F7217D /* BottomContentView.m in Sources */,
-				7EFF8AD41E66769300F7217D /* ViewController.m in Sources */,
+				7EF93EB01E695CBD00B26BE8 /* YHMainController.m in Sources */,
 				7EFF8AD11E66769300F7217D /* AppDelegate.m in Sources */,
 				7EFF8B1F1E668ED400F7217D /* CruiseDetailViewController.m in Sources */,
 				7EFF8B001E6677C300F7217D /* CruiseListViewController.m in Sources */,
@@ -531,14 +527,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		7EFF8AD51E66769300F7217D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7EFF8AD61E66769300F7217D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		7EFF8ADA1E66769300F7217D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

@@ -8,6 +8,6 @@
 
 |显示效果|
 --------
-<img src="https://github.com/andyysea/YHDisplayScrollView/blob/master/GIF/DynamicGraph.gif "width=200 height=360 />
+<img src="https://github.com/andyysea/ViewEffectsAndLinkage/blob/master/GIF/DynamicGraph.gif "width=200 height=360 />
 
 <!--<br/>-->

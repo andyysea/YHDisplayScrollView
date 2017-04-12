@@ -64,6 +64,7 @@
    // self.seaViewLabel.text = downModel.seaviewRoom;
    // self.balconyLabel.text = downModel.balconyRoom;
    // self.roomLabel.text = downModel.suiteRoom;
+    // ****** 自定义一个视图,专门创建显示多少船舱房型
 }
 
 
@@ -72,30 +73,30 @@
     
     self.contentView.backgroundColor = [UIColor whiteColor];
     
-    CGFloat topMargin = 0;
-    CGFloat downMargin = 0;
-    if (Width_Window == 375) {
-        topMargin = 5;
-        downMargin = 7;
-    } else if (Width_Window == 414) {
-        topMargin = 8;
-        downMargin = 12;
-    }
+//    CGFloat topMargin = 0;
+//    CGFloat downMargin = 0;
+//    if (Width_Window == 375) {
+//        topMargin = 5;
+//        downMargin = 7;
+//    } else if (Width_Window == 414) {
+//        topMargin = 8;
+//        downMargin = 12;
+//    }
     
     
     //上部分左边
-    UIImageView *startImageView = [[UIImageView alloc] initWithFrame:CGRectMake(15, 12 + topMargin, 16, 16)];
+    UIImageView *startImageView = [[UIImageView alloc] initWithFrame:CGRectMake(15, 12, 16, 16)];
     startImageView.image = [UIImage imageNamed:@"出发icon"];
     [self.contentView addSubview:startImageView];
     
-    UILabel *startLabel = [[UILabel alloc] initWithFrame:CGRectMake(36, 10 + topMargin, 50, 20)];
+    UILabel *startLabel = [[UILabel alloc] initWithFrame:CGRectMake(36, 10, 50, 20)];
     startLabel.textAlignment = NSTextAlignmentLeft;
     startLabel.text = @"出发";
     startLabel.font = [UIFont systemFontOfSize:15];
     [self.contentView addSubview:startLabel];
     
     // * 历时
-    UILabel *timeLabel = [[UILabel alloc] initWithFrame:CGRectMake((self.bounds.size.width - 100) / 2 , 10 + topMargin, 100, 20)];
+    UILabel *timeLabel = [[UILabel alloc] initWithFrame:CGRectMake((self.bounds.size.width - 100) / 2 , 10, 100, 20)];
     timeLabel.textAlignment = NSTextAlignmentCenter;
     timeLabel.text = @"23日22晚";
     timeLabel.font = [UIFont systemFontOfSize:15];
@@ -103,18 +104,18 @@
     
     
     // 上部分右边
-    UIImageView *endImageView = [[UIImageView alloc] initWithFrame:CGRectMake(self.bounds.size.width - 35, 12 + topMargin, 16, 16)];
+    UIImageView *endImageView = [[UIImageView alloc] initWithFrame:CGRectMake(self.bounds.size.width - 35, 12, 16, 16)];
     endImageView.image = [UIImage imageNamed:@"返航icon"];
     [self.contentView addSubview:endImageView];
     
-    UILabel *endLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.bounds.size.width - 87, 10 + topMargin, 50, 20)];
+    UILabel *endLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.bounds.size.width - 87, 10, 50, 20)];
     endLabel.textAlignment = NSTextAlignmentRight;
     endLabel.text = @"返回";
     endLabel.font = [UIFont systemFontOfSize:15];
     [self.contentView addSubview:endLabel];
     
     //* 出发地
-    UILabel *startPlaceLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 40 + topMargin, 120, 20)];
+    UILabel *startPlaceLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 40, 120, 20)];
     startPlaceLabel.text = @"部里克斯";
     startPlaceLabel.textAlignment = NSTextAlignmentCenter;
     startPlaceLabel.textColor = [UIColor darkGrayColor];
@@ -122,7 +123,7 @@
     [self.contentView addSubview:startPlaceLabel];
     
     // 船票类型
-    UIButton *shipTypeButton = [[UIButton alloc] initWithFrame:CGRectMake((self.bounds.size.width - 50) / 2 , timeLabel.bottom + 10 + topMargin, 50, 20)];
+    UIButton *shipTypeButton = [[UIButton alloc] initWithFrame:CGRectMake((self.bounds.size.width - 50) / 2 , timeLabel.bottom + 10, 50, 20)];
     shipTypeButton.enabled = NO;
     [shipTypeButton setTitle:@"单船票" forState:UIControlStateNormal];
     [shipTypeButton setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
@@ -132,7 +133,7 @@
     
     
     //* 目的地
-    UILabel *endPlaceLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.bounds.size.width - 120, 40 + topMargin, 120, 20)];
+    UILabel *endPlaceLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.bounds.size.width - 120, 40, 120, 20)];
     endPlaceLabel.text = @"细腻";
     endPlaceLabel.textAlignment = NSTextAlignmentCenter;
     endPlaceLabel.textColor = [UIColor darkGrayColor];
@@ -140,7 +141,7 @@
     [self.contentView addSubview:endPlaceLabel];
     
     // *出发时间
-    UILabel *startTimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, 68 + topMargin, 120, 20)];
+    UILabel *startTimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, 68, 120, 20)];
     startTimeLabel.text = @"2017-02-10";
     startTimeLabel.textAlignment = NSTextAlignmentLeft;
     startTimeLabel.textColor = [UIColor darkGrayColor];
@@ -148,7 +149,7 @@
     [self.contentView addSubview:startTimeLabel];
     
     // *结束时间
-    UILabel *endTimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.bounds.size.width - 15 - 120, 68 + topMargin, 120, 20)];
+    UILabel *endTimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.bounds.size.width - 15 - 120, 68, 120, 20)];
     endTimeLabel.text = @"2017-02-22";
     endTimeLabel.textAlignment = NSTextAlignmentRight;
     endTimeLabel.textColor = [UIColor darkGrayColor];
@@ -157,45 +158,45 @@
     
     
     // 底部左侧
-    NSArray *titleArray = @[@"内舱房",@"海景房",@"阳台房",@"套房"];
-    NSInteger index = 0;
-    for (NSString *titleStr in titleArray) {
-        
-        UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, startTimeLabel.bottom + 20 + index * (20 + 5 + downMargin) + topMargin + downMargin, (self.bounds.size.width - 110) / 2, 20)];
-        titleLabel.font = [UIFont systemFontOfSize:13];
-        titleLabel.text = titleStr;
-        titleLabel.textAlignment = NSTextAlignmentRight;
-        [self.contentView addSubview:titleLabel];
-        
-        index++;
-    }
-    
-    // 底部右侧 (内舱房,海景房,阳台房,套房)
-    // 内舱房
-    UILabel *barnLabel = [[UILabel alloc] initWithFrame:CGRectMake((self.bounds.size.width + 110) / 2 , endTimeLabel.bottom + 20 + topMargin + downMargin, (self.bounds.size.width - 110) / 2, 20)];
-    barnLabel.font = [UIFont systemFontOfSize:13];
-    barnLabel.text = @"￥1603/人起";
-    barnLabel.textAlignment = NSTextAlignmentLeft;
-    [self.contentView addSubview:barnLabel];
-    // 海景房
-    UILabel *seaViewLabel = [[UILabel alloc] initWithFrame:CGRectMake((self.bounds.size.width + 110) / 2 , barnLabel.bottom + 5 + downMargin, (self.bounds.size.width - 110) / 2, 20)];
-    seaViewLabel.font = [UIFont systemFontOfSize:13];
-    seaViewLabel.text = @"￥1603/人起";
-    seaViewLabel.textAlignment = NSTextAlignmentLeft;
-    [self.contentView addSubview:seaViewLabel];
-    // 阳台房
-    UILabel *balconyLabel = [[UILabel alloc] initWithFrame:CGRectMake((self.bounds.size.width + 110) / 2 , seaViewLabel.bottom + 5 + downMargin, (self.bounds.size.width - 110) / 2, 20)];
-    balconyLabel.font = [UIFont systemFontOfSize:13];
-    balconyLabel.text = @"￥1603/人起";
-    balconyLabel.textAlignment = NSTextAlignmentLeft;
-    [self.contentView addSubview:balconyLabel];
-    // 套房
-    UILabel *roomLabel = [[UILabel alloc] initWithFrame:CGRectMake((self.bounds.size.width + 110) / 2 , balconyLabel.bottom + 5 + downMargin, (self.bounds.size.width - 110) / 2, 20)];
-    roomLabel.font = [UIFont systemFontOfSize:13];
-    roomLabel.text = @"￥1603/人起";
-    roomLabel.textAlignment = NSTextAlignmentLeft;
-    [self.contentView addSubview:roomLabel];
-    
+//    NSArray *titleArray = @[@"内舱房",@"海景房",@"阳台房",@"套房"];
+//    NSInteger index = 0;
+//    for (NSString *titleStr in titleArray) {
+//        
+//        UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, startTimeLabel.bottom + 20 + index * (20 + 5 + downMargin) + topMargin + downMargin, (self.bounds.size.width - 110) / 2, 20)];
+//        titleLabel.font = [UIFont systemFontOfSize:13];
+//        titleLabel.text = titleStr;
+//        titleLabel.textAlignment = NSTextAlignmentRight;
+//        [self.contentView addSubview:titleLabel];
+//        
+//        index++;
+//    }
+//    
+//    // 底部右侧 (内舱房,海景房,阳台房,套房)
+//    // 内舱房
+//    UILabel *barnLabel = [[UILabel alloc] initWithFrame:CGRectMake((self.bounds.size.width + 110) / 2 , endTimeLabel.bottom + 20 + topMargin + downMargin, (self.bounds.size.width - 110) / 2, 20)];
+//    barnLabel.font = [UIFont systemFontOfSize:13];
+//    barnLabel.text = @"￥1603/人起";
+//    barnLabel.textAlignment = NSTextAlignmentLeft;
+//    [self.contentView addSubview:barnLabel];
+//    // 海景房
+//    UILabel *seaViewLabel = [[UILabel alloc] initWithFrame:CGRectMake((self.bounds.size.width + 110) / 2 , barnLabel.bottom + 5 + downMargin, (self.bounds.size.width - 110) / 2, 20)];
+//    seaViewLabel.font = [UIFont systemFontOfSize:13];
+//    seaViewLabel.text = @"￥1603/人起";
+//    seaViewLabel.textAlignment = NSTextAlignmentLeft;
+//    [self.contentView addSubview:seaViewLabel];
+//    // 阳台房
+//    UILabel *balconyLabel = [[UILabel alloc] initWithFrame:CGRectMake((self.bounds.size.width + 110) / 2 , seaViewLabel.bottom + 5 + downMargin, (self.bounds.size.width - 110) / 2, 20)];
+//    balconyLabel.font = [UIFont systemFontOfSize:13];
+//    balconyLabel.text = @"￥1603/人起";
+//    balconyLabel.textAlignment = NSTextAlignmentLeft;
+//    [self.contentView addSubview:balconyLabel];
+//    // 套房
+//    UILabel *roomLabel = [[UILabel alloc] initWithFrame:CGRectMake((self.bounds.size.width + 110) / 2 , balconyLabel.bottom + 5 + downMargin, (self.bounds.size.width - 110) / 2, 20)];
+//    roomLabel.font = [UIFont systemFontOfSize:13];
+//    roomLabel.text = @"￥1603/人起";
+//    roomLabel.textAlignment = NSTextAlignmentLeft;
+//    [self.contentView addSubview:roomLabel];
+//    
     
     
     // 属性记录
@@ -204,11 +205,11 @@
     _endPlaceLabel = endPlaceLabel;
     _startTimeLabel = startTimeLabel;
     _endTimeLabel = endTimeLabel;
-    _barnLabel = barnLabel;
-    _seaViewLabel = seaViewLabel;
-    _balconyLabel = balconyLabel;
-    _roomLabel = roomLabel;
-
+//    _barnLabel = barnLabel;
+//    _seaViewLabel = seaViewLabel;
+//    _balconyLabel = balconyLabel;
+//    _roomLabel = roomLabel;
+//
 }
 
 

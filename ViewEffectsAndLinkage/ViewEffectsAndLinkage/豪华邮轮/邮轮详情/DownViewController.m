@@ -108,7 +108,21 @@
     [self.view addSubview:lineView];
     
     // 自定义底部视图
-    BottomContentView *bottomView = [[BottomContentView alloc] initWithFrame:CGRectMake(0, horView.bottom + 25, Width_Window, bgHeight + bgHeight / 3 * 4  + 30)];
+    // 根据底部房型数量 确定底部视图到底有多高
+    NSInteger count = 0;
+//    NSArray *cabinTypeArray = nil;
+    if (self.modelArray.count) {
+        NSArray *array = self.modelArray.firstObject;
+        if (array.count) {
+            for (DownViewModel *model in array) {
+                if (model.cabinTypePrice.count > count) {
+                    count = model.cabinTypePrice.count;
+                }
+            }
+        }
+    }
+    
+    BottomContentView *bottomView = [[BottomContentView alloc] initWithFrame:CGRectMake(0, horView.bottom + 25, Width_Window, 90 + 20 + 25 * count  + 30)];
     bottomView.backgroundColor = [UIColor colorWithRed:0.950 green:0.950 blue:0.970 alpha:1.000];
     [self.view addSubview:bottomView];
 

@@ -29,6 +29,12 @@
  */
 @property (nonatomic, weak) BottomContentView *bottomView;
 
+/** 刚进入的时候 默认的首月,一个月的几个航期中房型最多的那一期数量 */
+@property (nonatomic, assign) NSInteger preMaxCount;
+
+/** 点击视图上方不同月,该月对应的不同航期中房型数量最多的那一期的数量 */
+@property (nonatomic, assign) NSInteger currentMaxCount;
+
 @end
 
 @implementation DownViewController
@@ -76,6 +82,30 @@
     NSLog(@"index --> %zd", index);
 
     if (index < self.modelArray.count) {
+        
+        NSArray *array = self.modelArray[index];
+        if (array.count) {
+            BOOL IsFist = YES;
+            for (DownViewModel *model in array) {
+                if (IsFist) {
+                    IsFist = NO;
+                    self.currentMaxCount = model.cabinTypePrice.count;
+                }
+                if (self.currentMaxCount < model.cabinTypePrice.count) {
+                    self.currentMaxCount = model.cabinTypePrice.count;
+                }
+            }
+        }
+        
+        [self.bottomView removeFromSuperview];
+        self.preMaxCount = self.currentMaxCount;
+        
+        BottomContentView *bottomView = [[BottomContentView alloc] initWithFrame:CGRectMake(0, 209, Width_Window, 90 + 20 + 25 * self.preMaxCount  + 30)];
+        bottomView.backgroundColor = [UIColor colorWithRed:0.950 green:0.950 blue:0.970 alpha:1.000];
+        [self.view addSubview:bottomView];
+        
+        self.bottomView = bottomView;
+        
         self.bottomView.bottomModelArray = self.modelArray[index];
     }
 }
@@ -87,12 +117,7 @@
     self.view.backgroundColor =  [UIColor colorWithRed:0.950 green:0.950 blue:0.970 alpha:1.000];
     self.automaticallyAdjustsScrollViewInsets = NO;
     
-    CGFloat bgHeight = 90;
-    if (Width_Window == 375) {
-        bgHeight = 120;
-    } else if (Width_Window == 414) {
-        bgHeight = 130;
-    }
+    CGFloat bgHeight = 120;
     
     // 1> 添加顶部滚动视图
 //**** 这里的初始化方法,要同时把数据传递进去,所以创建要在请求数据之后再创建,同时初始化方法要改进
@@ -109,20 +134,20 @@
     
     // 自定义底部视图
     // 根据底部房型数量 确定底部视图到底有多高
-    NSInteger count = 0;
+//    NSInteger count = 0;
 //    NSArray *cabinTypeArray = nil;
     if (self.modelArray.count) {
         NSArray *array = self.modelArray.firstObject;
         if (array.count) {
             for (DownViewModel *model in array) {
-                if (model.cabinTypePrice.count > count) {
-                    count = model.cabinTypePrice.count;
+                if (model.cabinTypePrice.count > self.preMaxCount) {
+                    self.preMaxCount = model.cabinTypePrice.count;
                 }
             }
         }
     }
     
-    BottomContentView *bottomView = [[BottomContentView alloc] initWithFrame:CGRectMake(0, horView.bottom + 25, Width_Window, 90 + 20 + 25 * count  + 30)];
+    BottomContentView *bottomView = [[BottomContentView alloc] initWithFrame:CGRectMake(0, horView.bottom + 25, Width_Window, 90 + 20 + 25 * self.preMaxCount  + 30)];
     bottomView.backgroundColor = [UIColor colorWithRed:0.950 green:0.950 blue:0.970 alpha:1.000];
     [self.view addSubview:bottomView];
 

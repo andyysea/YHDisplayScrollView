@@ -72,10 +72,6 @@
 
     CGFloat Width = self.bounds.size.width;
     CGFloat Height = self.bounds.size.height / 3;
-//  外界是根据屏幕大小来适当改变高度的,所以这里 显示的也不能太高了
-    if (Height == 50) {
-        
-    }
     
     // 年份
     UILabel *yearLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 10, Width, Height)];

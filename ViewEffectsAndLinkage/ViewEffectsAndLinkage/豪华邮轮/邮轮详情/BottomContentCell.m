@@ -9,6 +9,7 @@
 #import "BottomContentCell.h"
 #import "DownViewModel.h"
 #import "UIView+Common.h"
+#import "CabinTypeView.h"
 
 #define Width_Window    [UIScreen mainScreen].bounds.size.width
 #define Height_Window   [UIScreen mainScreen].bounds.size.height
@@ -65,6 +66,10 @@
    // self.balconyLabel.text = downModel.balconyRoom;
    // self.roomLabel.text = downModel.suiteRoom;
     // ****** 自定义一个视图,专门创建显示多少船舱房型
+    
+    NSArray *contentArray = downModel.cabinTypePrice;
+    CabinTypeView *typeView = [[CabinTypeView alloc] initWithFrame:CGRectMake(0, 108, self.bounds.size.width, self.bounds.size.height - 88) dataArray:contentArray];
+    [self.contentView addSubview:typeView];
 }
 
 

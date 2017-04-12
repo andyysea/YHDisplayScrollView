@@ -60,10 +60,10 @@
     self.startTimeLabel.text = downModel.startTime;
     self.endTimeLabel.text = downModel.endTime;
     
-    self.barnLabel.text = downModel.innerRoom;
-    self.seaViewLabel.text = downModel.seaviewRoom;
-    self.balconyLabel.text = downModel.balconyRoom;
-    self.roomLabel.text = downModel.suiteRoom;
+   // self.barnLabel.text = downModel.innerRoom;
+   // self.seaViewLabel.text = downModel.seaviewRoom;
+   // self.balconyLabel.text = downModel.balconyRoom;
+   // self.roomLabel.text = downModel.suiteRoom;
 }
 
 

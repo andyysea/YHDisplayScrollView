@@ -40,6 +40,14 @@
 @property (nonatomic, copy) NSString *shipName;
 
 /**
+ 船票类型
+ seasonTicket 一价全含
+ oneTicket    单船票
+ */
+@property (nonatomic, copy) NSString *ticketsType;
+
+
+/**
  旅游地点
  ****-->需要 用逗号切割成 数组再使用******
  */

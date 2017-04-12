@@ -1,68 +1,112 @@
 [
     [
         {
+            "cabinTypePrice":
+            [
+                {
+                    "cabinPrice": "1000元/人",
+                    "cabinType": "00004"
+                },
+             
+                {
+                    "cabinPrice": "990/人",
+                    "cabinType": "反反复复"
+                },
+            ],
+     
             "routeDuration": "2晚3天",
             "shipCount": "2",
-            "innerRoom": "售净",
             "lowerTicketPrice": "888",
             "shipId": "17022715445476132823",
-            "balconyRoom": "¥2888/人起",
             "endTime": "2017-03-04",
             "shipTime": "2017-03",
-            "seaviewRoom": "¥1888/人起",
-            "suiteRoom": "¥8888/人起",
             "endPiont": "泰国",
             "startPoint": "新加坡",
-            "startTime": "2017-03-01"
+            "startTime": "2017-03-01",
+            "ticketsType": "seasonTicket"
         },
         {
+            "cabinTypePrice":
+            [
+                {
+                    "cabinPrice": "355/人",
+                    "cabinType": "vvrff"
+                },
+      
+                {
+                    "cabinPrice": "444/人",
+                    "cabinType": "灌灌灌灌"
+                },
+            ],
+
             "routeDuration": "2晚3天",
             "shipCount": "2",
-            "innerRoom": "售净",
             "lowerTicketPrice": "888",
             "shipId": "17022715445476132823",
-            "balconyRoom": "售净",
             "endTime": "2017-03-13",
             "shipTime": "2017-03",
-            "seaviewRoom": "售净",
-            "suiteRoom": "¥8898/人起",
             "endPiont": "泰国",
             "startPoint": "新加坡",
-            "startTime": "2017-03-10"
+            "startTime": "2017-03-10",
+            "ticketsType": "seasonTicket"
+
         }
     ],
     [
         {
+            "cabinTypePrice":
+            [
+                {
+                    "cabinPrice": "555/人",
+                    "cabinType": "各个"
+                },
+      
+                {
+                    "cabinPrice": "3333/人",
+                    "cabinType": "灌灌灌灌"
+                },
+            ],
+
             "routeDuration": "2晚3天",
             "shipCount": "1",
-            "innerRoom": "¥2888/人起",
             "lowerTicketPrice": "888",
             "shipId": "17022715445476132823",
-            "balconyRoom": "售净",
             "endTime": "2017-04-15",
             "shipTime": "2017-04",
-            "seaviewRoom": "售净",
-            "suiteRoom": "¥1898/人起",
             "endPiont": "泰国",
             "startPoint": "新加坡",
-            "startTime": "2017-04-01"
+            "startTime": "2017-04-01",
+            "ticketsType": "seasonTicket"
+     
         }
     ],
     [
         {
+     
+            "cabinTypePrice":
+            [
+                {
+                    "cabinPrice": "777/人",
+                    "cabinType": "灌灌灌灌"
+                },
+      
+                {
+                    "cabinPrice": "666/人",
+                    "cabinType": "各个"
+                },
+            ],
+
             "routeDuration": "4晚3天",
             "shipCount": "1",
-            "innerRoom": "售尽",
             "lowerTicketPrice": "888",
             "shipId": "17022715445476132823",
-            "balconyRoom": "¥2888/人起",
             "endTime": "2017-05-20",
             "shipTime": "2017-05",
-            "seaviewRoom": "售净",
-            "suiteRoom": "¥8888/人起",
             "endPiont": "泰国",
             "startPoint": "新加坡",
-            "startTime": "2017-05-05"
+            "startTime": "2017-05-05",
+            "ticketsType": "seasonTicket"
+     
         }
    ]
 ]

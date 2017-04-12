@@ -6,7 +6,8 @@
         "routeDuration": "2晚3天",
         "shipName": "公主游轮·安德莉亚女王号",
         "listPhoto": "http://123.126.102.219:20081/resources/upload/service/golf/17022715445476132823/17022815341212535597.jpg",
-        "lowerTicketPrice": "888"
+        "lowerTicketPrice": "888",
+        "ticketsType": "seasonTicket"
     },
     {
         "routeName": "游行名称02",
@@ -15,7 +16,8 @@
         "routeDuration": "1个月",
         "shipName": "游轮名称01",
         "listPhoto": "http://123.126.102.219:20081/resources/upload/service/golf/17022715551478646357/17030110242859978230.jpg",
-        "lowerTicketPrice": "1888.88"
+        "lowerTicketPrice": "1888.88",
+        "ticketsType": "seasonTicket"
     }
 ]
 

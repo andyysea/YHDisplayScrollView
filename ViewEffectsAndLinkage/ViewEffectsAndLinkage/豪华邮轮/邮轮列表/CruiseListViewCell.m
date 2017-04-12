@@ -23,12 +23,10 @@
 @property (nonatomic, weak) UIImageView *bgImageView;
 /** 旅行时间 */
 @property (nonatomic, weak) UILabel *travelTimeLabel;
-/** 旅行地点 */
-//@property (nonatomic, weak) UILabel *travelPlaceLabel;
 /** 旅行价格 */
 @property (nonatomic, weak) UILabel *priceLabel;
 /** 船票类型 */
-//@property (nonatomic, weak) UILabel *ticketTypeLabel;
+@property (nonatomic, weak) UIButton *ticketTypeButton;
 /** 邮轮名字 */
 @property (nonatomic, weak) UILabel*cruiseNameLabel;
 
@@ -61,6 +59,12 @@
     if (self.placeView == nil && model.routeDestArray.count) {
         self.placeView = [[PlaceContentView alloc] initWithFrame:CGRectMake(20, 40, Width_Window - 40, 40) dataArr:model.routeDestArray];
         [self.contentView addSubview:self.placeView];
+    }
+    
+    if ([model.ticketsType isEqualToString:@"seasonTicket"]) {
+        [self.ticketTypeButton setTitle:@"一价全含" forState:UIControlStateNormal];
+    } else {
+        [self.ticketTypeButton setTitle:@"单船票" forState:UIControlStateNormal];
     }
     
     self.priceLabel.text = [NSString stringWithFormat:@"¥ %@/人起", model.lowerTicketPrice];
@@ -113,7 +117,7 @@
     }];
     
     // 船票类型
-    UIButton *ticketTypeButton = [[UIButton alloc] initWithFrame:CGRectMake(20, 125, 50, 20)];
+    UIButton *ticketTypeButton = [[UIButton alloc] initWithFrame:CGRectMake(20, 125, 60, 20)];
     ticketTypeButton.titleLabel.font = [UIFont systemFontOfSize:13];
     [ticketTypeButton setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
     [ticketTypeButton setTitle:@"单船票" forState:UIControlStateNormal];
@@ -132,9 +136,8 @@
 //  记录
     _bgImageView = bgImageView;
     _travelTimeLabel = travelTimeLabel;
-//    _travelPlaceLabel = travelPlaceLabel;
+    _ticketTypeButton = ticketTypeButton;
     _priceLabel = priceLabel;
-//    _ticketTypeLabel = ticketTypeLabel;
     _cruiseNameLabel = cruiseNameLabel;
 }
 

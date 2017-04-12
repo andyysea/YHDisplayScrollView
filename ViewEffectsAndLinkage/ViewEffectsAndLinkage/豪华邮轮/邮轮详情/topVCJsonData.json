@@ -10,7 +10,8 @@
     "lowerTicketPrice": "888",
     "routeName": "新马泰三日游",
     "tonnage": "20000",
-    "passgerCapacity": "1000"
+    "passgerCapacity": "1000",
+    "ticketsType": "seasonTicket"
 }
 
 

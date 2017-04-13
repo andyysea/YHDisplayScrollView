@@ -15,6 +15,12 @@
 #define Width_Window    [UIScreen mainScreen].bounds.size.width
 #define Height_Window   [UIScreen mainScreen].bounds.size.height
 
+/** 初始化底部控制器的时候,当船舱类型太多超出屏幕的通知名 */
+extern NSString *const CabinTypeExceedScreenHeightByInitializeNotification;
+/** 当点击不同月份对应的航期,当船舱类型不同时来修改底部控制器的滚动范围的通知名 */
+extern NSString *const CabinTypeExceedScreenHeightByClickNotification;
+/** 需要设置的滚动高度对应的key */
+extern NSString *const DownVCScrollHeightKey;
 
 @interface CruiseDetailViewController ()<UIScrollViewDelegate>
 
@@ -40,9 +46,55 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self addObserver];
     [self setupUI];
-    [self setupOther];
+//    [self setupOther];
+    
 }
+
+#pragma mark - 添加观察者
+- (void)addObserver {
+    // **********
+    /** 添加观察者,注意这个是初始化底部控制器之前就要添加的观察者, 同时不要与初始化默认的滚动范围有冲突
+     因为在创建添加底部控制器的时候,如果满足了条件,就会触发发送通知,修改初始化默认的底部控制器的滚动垂直方向的滚动范围,所以初始化数据的方法调用要在添加底部控制器之前
+     此外还有添加一个当点击底部控制器上方的不同月份的航期的时候,改变滚动范围,因为在点击了之后才会发送通知,所以这个观察者可以添加时机,相对考虑的少一些
+     */
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(InitlizeDownVCNotification:) name:CabinTypeExceedScreenHeightByInitializeNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(ClickDifferentMonthNotification:) name:CabinTypeExceedScreenHeightByClickNotification object:nil];
+}
+
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+#pragma mark - 观察者调用的方法
+/** 初始化底部控制器,
+ 该通知是提前修改 self.HeightForSecton2 的默认值,当上拉的时候就可以变化了
+ */
+- (void)InitlizeDownVCNotification:(NSNotification *)n {
+    NSLog(@"-----调用通知了------");
+    NSInteger scrollHeight = [n.userInfo[DownVCScrollHeightKey] integerValue];
+    if (scrollHeight > self.HeightForSecton2) {
+        self.HeightForSecton2 = scrollHeight;
+    }
+    
+    NSLog(@"scrollHeight -> %zd", scrollHeight);
+}
+
+/** 点击不同月份对应的航期的时候对应的航期 */
+- (void)ClickDifferentMonthNotification:(NSNotification *)n {
+    NSInteger scrollHeight = [n.userInfo[DownVCScrollHeightKey] integerValue];
+    if ((scrollHeight < self.HeightForSecton2) && self.HeightForSecton2 > Height_Window) {
+        
+    }
+    self.HeightForSecton2 = scrollHeight;
+    self.scrollView.contentSize = CGSizeMake(Width_Window, self.HeightForSecton1 + self.HeightForSecton2);
+    
+    NSLog(@"scrollHeight --> %zd",scrollHeight);
+}
+
 
 
 #pragma mark - 立即预约按钮点击方法
@@ -59,7 +111,7 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     
     CGFloat offsetY = scrollView.contentOffset.y;
-    //    NSLog(@" 00 --> %f", offsetY);
+//        NSLog(@" 00 --> %f", offsetY);
     if (self.isUP == YES) {
         //当前是第一页时
         if (offsetY >= self.whenDown) {
@@ -80,7 +132,8 @@
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
     
     CGFloat offsetY = scrollView.contentOffset.y;
-    
+    NSLog(@" 00 --> %f", offsetY);
+
     if (self.isUP) {
         // 当前是第一页 -> 第二页
         if (offsetY >= self.whenDown) {
@@ -118,7 +171,7 @@
             } completion:^(BOOL finished) {
                 [UIView animateWithDuration:0.25 animations:^{
                     scrollView.contentInset = UIEdgeInsetsMake(- self.contentInSet, 0, 0, 0);
-                    scrollView.contentSize = CGSizeMake(Width_Window, - self.HeightForSecton1);
+                    scrollView.contentSize = CGSizeMake(Width_Window, self.HeightForSecton1);
                 } completion:^(BOOL finished) {
                     self.isUP = YES;
                     // 这里再加上一句代码,避免不显示下拉查看更多
@@ -167,6 +220,11 @@
     //    scrollView.contentSize = CGSizeMake(Width_Window, Height_Window * 2);
     [self.view addSubview:scrollView];
     
+    _scrollView = scrollView;
+
+    [self setupOther];
+  
+    
     // 这里的背景视图要有 2 倍的屏幕高度,否则,底部控制器视图没有添加父视图有效范围上,无法做出响应
     UIView *bgView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, Width_Window, Height_Window * 2)];
     [scrollView addSubview:bgView];
@@ -195,14 +253,11 @@
     button.frame = CGRectMake(10, self.view.bottom - 54, Width_Window - 20, 44);
     [button addTarget:self action:@selector(bookButtonClick) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button];
-    
-    
-    
+
     
     // 属性记录
     _topVC = topVC;
     _downVC = downVC;
-    _scrollView = scrollView;
     
 }
 

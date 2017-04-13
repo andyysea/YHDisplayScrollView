@@ -15,6 +15,12 @@
 #define Width_Window    [UIScreen mainScreen].bounds.size.width
 #define Height_Window   [UIScreen mainScreen].bounds.size.height
 
+/** 初始化底部控制器的时候,当船舱类型太多超出屏幕的通知名 */
+NSString *const CabinTypeExceedScreenHeightByInitializeNotification = @"CabinTypeExceedScreenHeightByInitializeNotification";
+/** 当点击不同月份对应的航期,当船舱类型不同时来修改底部控制器的滚动范围的通知名 */
+NSString *const CabinTypeExceedScreenHeightByClickNotification = @"CabinTypeExceedScreenHeightByClickNotification";
+/** 需要设置的滚动高度对应的key */
+NSString *const DownVCScrollHeightKey = @"DownVCScrollHeightKey";
 
 @interface DownViewController ()<HorizontalScrollerViewDelegate>
 
@@ -34,6 +40,9 @@
 
 /** 点击视图上方不同月,该月对应的不同航期中房型数量最多的那一期的数量 */
 @property (nonatomic, assign) NSInteger currentMaxCount;
+
+/** 之前选中的月份下标 */
+@property (nonatomic, assign) NSInteger preIndex;
 
 @end
 
@@ -80,7 +89,11 @@
 // 顶部滚动视图代理方法,回调哪个滚到中间了
 - (void)horizontalScrollerViewDelegate:(HorizontalScrollerView *)scrollerView indexOfCenterView:(NSInteger)index {
     NSLog(@"index --> %zd", index);
-
+    if (index == self.preIndex) {
+        return;
+    }
+    self.preIndex = index;
+    
     if (index < self.modelArray.count) {
         
         NSArray *array = self.modelArray[index];
@@ -95,10 +108,19 @@
                     self.currentMaxCount = model.cabinTypePrice.count;
                 }
             }
+            
+            // 上面循环遍历的是每个月份不同期中最大的房间类型数量
+        }
+        // 如果先前的最大数量与现在的不一样,就发送通知, 一样就不发送通知
+        if (self.preMaxCount != self.currentMaxCount) {
+            self.preMaxCount = self.currentMaxCount;
+            
+                NSInteger scrollHeight = 373 + self.preMaxCount * 25 + 30;
+                
+                [[NSNotificationCenter defaultCenter] postNotificationName:CabinTypeExceedScreenHeightByClickNotification object:nil userInfo:@{DownVCScrollHeightKey: @(scrollHeight)}];
         }
         
         [self.bottomView removeFromSuperview];
-        self.preMaxCount = self.currentMaxCount;
         
         BottomContentView *bottomView = [[BottomContentView alloc] initWithFrame:CGRectMake(0, 209, Width_Window, 90 + 20 + 25 * self.preMaxCount  + 30)];
         bottomView.backgroundColor = [UIColor colorWithRed:0.950 green:0.950 blue:0.970 alpha:1.000];
@@ -146,6 +168,17 @@
             }
         }
     }
+    
+    /** 当房间类型在下面不同手机型号上超过屏幕的时候,发送通知, 修改滚动范围 */
+    // 如果是 5s 超过 7 个 -> 滚动范围 373 + self.preMaxCount * 25
+    // 如果是 6  超过 11 个 -> 滚动范围 373 + self.preMaxCount * 25
+    // 如果是 6p 超过 14 个 -> 滚动范围 373 + self.preMaxCount * 25
+    if ((Width_Window == 320 && self.preMaxCount > 7) || (Width_Window == 375 && self.preMaxCount > 11) || (Width_Window == 414 && self.preMaxCount > 14) ) {
+        NSInteger scrollHeight = 373 + self.preMaxCount * 25 + 30;
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:CabinTypeExceedScreenHeightByInitializeNotification object:nil userInfo:@{DownVCScrollHeightKey: @(scrollHeight)}];
+    }
+    
     
     BottomContentView *bottomView = [[BottomContentView alloc] initWithFrame:CGRectMake(0, horView.bottom + 25, Width_Window, 90 + 20 + 25 * self.preMaxCount  + 30)];
     bottomView.backgroundColor = [UIColor colorWithRed:0.950 green:0.950 blue:0.970 alpha:1.000];

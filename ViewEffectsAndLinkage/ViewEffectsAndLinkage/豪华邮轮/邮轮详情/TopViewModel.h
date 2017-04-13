@@ -11,6 +11,14 @@
 @interface TopViewModel : NSObject
 
 /**
+ 船票类型
+ seasonTicket 一价全含
+ oneTicket    单船票
+ */
+@property (nonatomic, copy) NSString *ticketsType;
+
+
+/**
  游轮id
  */
 @property (nonatomic, copy) NSString *id;

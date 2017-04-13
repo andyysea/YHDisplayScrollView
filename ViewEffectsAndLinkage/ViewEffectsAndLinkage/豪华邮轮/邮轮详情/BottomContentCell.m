@@ -27,16 +27,18 @@
 @property (nonatomic, weak) UILabel *startTimeLabel;
 /** 结束时间 */
 @property (nonatomic, weak) UILabel *endTimeLabel;
+/** 不同船票类型 */
+@property (nonatomic, weak) UIButton *shipTypeButton;
 
 /** 内舱房 */
-@property (nonatomic, weak) UILabel *barnLabel;
-/** 海景房 */
-@property (nonatomic, weak) UILabel *seaViewLabel;
-/** 阳台房 */
-@property (nonatomic, weak) UILabel *balconyLabel;
-/** 套房 */
-@property (nonatomic, weak) UILabel *roomLabel;
-
+//@property (nonatomic, weak) UILabel *barnLabel;
+///** 海景房 */
+//@property (nonatomic, weak) UILabel *seaViewLabel;
+///** 阳台房 */
+//@property (nonatomic, weak) UILabel *balconyLabel;
+///** 套房 */
+//@property (nonatomic, weak) UILabel *roomLabel;
+//
 @end
 
 
@@ -61,14 +63,21 @@
     self.startTimeLabel.text = downModel.startTime;
     self.endTimeLabel.text = downModel.endTime;
     
-   // self.barnLabel.text = downModel.innerRoom;
+    // self.barnLabel.text = downModel.innerRoom;
    // self.seaViewLabel.text = downModel.seaviewRoom;
    // self.balconyLabel.text = downModel.balconyRoom;
    // self.roomLabel.text = downModel.suiteRoom;
+
+    if ([downModel.ticketsType isEqualToString:@"seasonTicket"]) {
+        [self.shipTypeButton setTitle:@"一价全含" forState:UIControlStateNormal];
+    } else {
+        [self.shipTypeButton setTitle:@"单船票" forState:UIControlStateNormal];
+    }
+    
     // ****** 自定义一个视图,专门创建显示多少船舱房型
     
     NSArray *contentArray = downModel.cabinTypePrice;
-    CabinTypeView *typeView = [[CabinTypeView alloc] initWithFrame:CGRectMake(0, 108, self.bounds.size.width, self.bounds.size.height - 88) dataArray:contentArray];
+    CabinTypeView *typeView = [[CabinTypeView alloc] initWithFrame:CGRectMake(0, 110, self.bounds.size.width, self.bounds.size.height - 110) dataArray:contentArray];
     [self.contentView addSubview:typeView];
 }
 
@@ -128,7 +137,7 @@
     [self.contentView addSubview:startPlaceLabel];
     
     // 船票类型
-    UIButton *shipTypeButton = [[UIButton alloc] initWithFrame:CGRectMake((self.bounds.size.width - 50) / 2 , timeLabel.bottom + 10, 50, 20)];
+    UIButton *shipTypeButton = [[UIButton alloc] initWithFrame:CGRectMake((self.bounds.size.width - 60) / 2 , timeLabel.bottom + 10, 60, 20)];
     shipTypeButton.enabled = NO;
     [shipTypeButton setTitle:@"单船票" forState:UIControlStateNormal];
     [shipTypeButton setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
@@ -146,7 +155,7 @@
     [self.contentView addSubview:endPlaceLabel];
     
     // *出发时间
-    UILabel *startTimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, 68, 120, 20)];
+    UILabel *startTimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, 70, 120, 20)];
     startTimeLabel.text = @"2017-02-10";
     startTimeLabel.textAlignment = NSTextAlignmentLeft;
     startTimeLabel.textColor = [UIColor darkGrayColor];
@@ -154,7 +163,7 @@
     [self.contentView addSubview:startTimeLabel];
     
     // *结束时间
-    UILabel *endTimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.bounds.size.width - 15 - 120, 68, 120, 20)];
+    UILabel *endTimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.bounds.size.width - 15 - 120, 70, 120, 20)];
     endTimeLabel.text = @"2017-02-22";
     endTimeLabel.textAlignment = NSTextAlignmentRight;
     endTimeLabel.textColor = [UIColor darkGrayColor];
@@ -215,6 +224,7 @@
 //    _balconyLabel = balconyLabel;
 //    _roomLabel = roomLabel;
 //
+    _shipTypeButton = shipTypeButton;
 }
 
 

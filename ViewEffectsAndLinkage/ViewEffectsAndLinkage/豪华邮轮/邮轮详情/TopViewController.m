@@ -42,6 +42,8 @@
 /** 邮轮吨位 */
 @property (nonatomic, weak) UILabel *tonnageLabel;
 
+/** 船票类型按钮 */
+@property (nonatomic, weak) UIButton *ticketTypeButton;
 
 /** 第二个底部视图 用于添加地点群 */
 @property (nonatomic, weak) UIView *twoBgView;
@@ -72,6 +74,11 @@
 - (void)setElementValueOfInterface {
     
     [self.topImageView sd_setImageWithURL:[NSURL URLWithString:self.topModel.infoPhoto] placeholderImage:[UIImage imageNamed:@"cruiseImagePlaceholder"]];
+    if ([self.topModel.ticketsType isEqualToString:@"seasonTicket"]) {
+        [self.ticketTypeButton setTitle:@"一价全含" forState:UIControlStateNormal];
+    } else {
+        [self.ticketTypeButton setTitle:@"单船票" forState:UIControlStateNormal];
+    }
     self.cruiseTopNameLabel.text = self.topModel.shipName;
     self.priceLabel.text = [NSString stringWithFormat:@"¥ %@/人起", self.topModel.lowerTicketPrice];
     // 历时 和 游行名称 --> 拼在一个标签内
@@ -140,7 +147,7 @@
     [topImageView addSubview:oneBgView];
     
     //* 左边船票类型
-    UIButton *ticketTypeButton = [[UIButton alloc] initWithFrame:CGRectMake(15, 10, 50, 20)];
+    UIButton *ticketTypeButton = [[UIButton alloc] initWithFrame:CGRectMake(15, 10, 60, 20)];
     ticketTypeButton.titleLabel.font = [UIFont systemFontOfSize:13];
     [ticketTypeButton setTitle:@"单船票" forState:UIControlStateNormal];
     [ticketTypeButton setBackgroundImage:[UIImage imageNamed:@"button_bg_ wathetBlue"] forState:UIControlStateNormal];
@@ -281,8 +288,8 @@
     _personCountLabel = personCountLabel;
     _consTimeLabel = consTimeLabel;
     _tonnageLabel = tonnageLabel;
-    
     _twoBgView = twoBgView;
+    _ticketTypeButton = ticketTypeButton;
 }
 
 @end

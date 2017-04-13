@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4D8C0E64B3678B5DF85F45ED /* libPods-ViewEffectsAndLinkage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F08B4725B6684AAD6C850C9 /* libPods-ViewEffectsAndLinkage.a */; };
 		7EC52E8C1E9DF7E20077B34B /* CabinTypeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC52E8B1E9DF7E20077B34B /* CabinTypeView.m */; };
+		7EC52E8E1E9F23D70077B34B /* description in Resources */ = {isa = PBXBuildFile; fileRef = 7EC52E8D1E9F23D70077B34B /* description */; };
 		7EF93EB01E695CBD00B26BE8 /* YHMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF93EAF1E695CBD00B26BE8 /* YHMainController.m */; };
 		7EFF8ACE1E66769300F7217D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EFF8ACD1E66769300F7217D /* main.m */; };
 		7EFF8AD11E66769300F7217D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EFF8AD01E66769300F7217D /* AppDelegate.m */; };
@@ -54,6 +55,7 @@
 		7B41036F9E52BBB13ECA9101 /* Pods-ViewEffectsAndLinkage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViewEffectsAndLinkage.release.xcconfig"; path = "Pods/Target Support Files/Pods-ViewEffectsAndLinkage/Pods-ViewEffectsAndLinkage.release.xcconfig"; sourceTree = "<group>"; };
 		7EC52E8A1E9DF7E20077B34B /* CabinTypeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CabinTypeView.h; sourceTree = "<group>"; };
 		7EC52E8B1E9DF7E20077B34B /* CabinTypeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CabinTypeView.m; sourceTree = "<group>"; };
+		7EC52E8D1E9F23D70077B34B /* description */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = description; sourceTree = "<group>"; };
 		7EF93EAE1E695CBD00B26BE8 /* YHMainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHMainController.h; sourceTree = "<group>"; };
 		7EF93EAF1E695CBD00B26BE8 /* YHMainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHMainController.m; sourceTree = "<group>"; };
 		7EFF8AC91E66769300F7217D /* ViewEffectsAndLinkage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ViewEffectsAndLinkage.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -160,6 +162,7 @@
 		7EFF8ACB1E66769300F7217D /* ViewEffectsAndLinkage */ = {
 			isa = PBXGroup;
 			children = (
+				7EC52E8D1E9F23D70077B34B /* description */,
 				7EFF8ACF1E66769300F7217D /* AppDelegate.h */,
 				7EFF8AD01E66769300F7217D /* AppDelegate.m */,
 				7EF93EAE1E695CBD00B26BE8 /* YHMainController.h */,
@@ -380,6 +383,7 @@
 				7EFF8ADC1E66769300F7217D /* LaunchScreen.storyboard in Resources */,
 				7EFF8AD91E66769300F7217D /* Assets.xcassets in Resources */,
 				7EFF8B321E66A71700F7217D /* downVCJsonData.json in Resources */,
+				7EC52E8E1E9F23D70077B34B /* description in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
